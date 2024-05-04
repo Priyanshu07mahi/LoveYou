@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .question {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        #answer-yes {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #answer-no {
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #love-message {
+            margin-top: 20px;
+        }
+        #copyright {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #4d0909;
+        }
+    </style>
+</head>
+<body>
+    <img src="./download.jpeg" alt="LOVE">
+    <div class="question">Do you love me?</div>
+    <button id="answer-yes" onclick="showLoveMessage()">Yes</button>
+    <button id="answer-no" onclick="moveNoOption()">No</button>
+    <div id="love-message" style="display: none;"></div>
+    <div id="copyright">&copy; 2024 PRIYANSHU ARYAN PANDA. All rights reserved.</div>
+
+    <script>
+        function moveNoOption() {
+            var noButton = document.getElementById("answer-no");
+            var newX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            var newY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = "absolute";
+            noButton.style.left = newX + "px";
+            noButton.style.top = newY + "px";
+        }
+
+        function showLoveMessage() {
+            var loveMessage = document.getElementById("love-message");
+            loveMessage.style.display = "block";
+            loveMessage.innerText = "I LOVE YOU TOO. THANK YOU FOR CHOOSING ME";
+        }
+    </script>
+</body>
+</html>
